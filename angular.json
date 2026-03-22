@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "crudTaure:build:production"
+              "buildTarget": "ecommerce:build:production"
             },
             "development": {
-              "buildTarget": "crudTaure:build:development"
+              "buildTarget": "ecommerce:build:development"
             }
           },
           "defaultConfiguration": "development"
