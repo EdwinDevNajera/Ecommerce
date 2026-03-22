@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "crudTaure": {
+    "ecommerce": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -37,8 +37,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "1mb",
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",
