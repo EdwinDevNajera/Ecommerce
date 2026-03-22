@@ -1,64 +1,141 @@
-<<<<<<< HEAD
-# CrudTaure
+# 🛒 Ecommerce Angular App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
+Aplicación ecommerce desarrollada con Angular enfocada en arquitectura modular, experiencia de usuario y flujo completo de compra.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Demo
 
-```bash
-ng serve
+<!-- LINK -->
+
+---
+
+## 📸 Preview
+
+<!-- SCRENSHOOTS -->
+
+---
+
+## 🧱 Tecnologías utilizadas
+
+* ⚡ Angular (Standalone Components)
+* 🧠 Signals (manejo de estado)
+* 📝 Reactive Forms
+* 🎨 CSS moderno
+* 💾 LocalStorage (persistencia)
+* 🔧 TypeScript
+
+---
+
+## 🛍️ Funcionalidades
+
+### 🛒 Carrito de compras
+
+* Agregar productos
+* Manejo de cantidades
+* Eliminación de productos
+* Persistencia en localStorage
+* Cálculo dinámico de totales
+
+---
+
+### 💳 Checkout completo
+
+* Formulario de envío validado
+* Formulario de pago con:
+
+  * Validación de tarjeta (algoritmo Luhn)
+  * Formato MM/YY
+  * Validación de CVV
+* Selección de método de pago
+
+---
+
+### 🎨 UI / UX
+
+* Diseño responsive
+* Tema claro / oscuro dinámico
+* Componentes desacoplados y reutilizables
+
+---
+
+### 🔐 Autenticación
+
+* Login simulado
+* Persistencia de sesión
+
+---
+
+### ⚙️ Arquitectura
+
+* Componentes standalone
+* Servicios centralizados (CartService)
+* Separación de responsabilidades
+* Estructura escalable
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+src/app
+ ├── components/
+ │    ├── checkout/
+ │    │    ├── shipping-form/
+ │    │    ├── payment-card/
+ │    │    ├── order-summary/
+ │    │    └── payment-method-selector/
+ │
+ ├── pages/
+ │    ├── home/
+ │    ├── cart/
+ │    ├── checkout/
+ │    └── login/
+ │
+ ├── services/
+ │    └── cart.service.ts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🧪 Flujo de compra
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. Usuario agrega productos al carrito
+2. Visualiza resumen de compra
+3. Completa formulario de envío
+4. Ingresa método de pago
+5. Simulación de pago
+6. Limpieza de carrito y redirección
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🔮 Mejoras futuras
 
-```bash
-ng generate --help
-```
+* 💳 Integración con Stripe / MercadoPago
+* 🔐 Autenticación real (JWT)
+* 🧾 Generación de órdenes
+* 📦 Backend (Node.js / NestJS)
+* 🎟 Sistema de cupones
 
-## Building
+---
 
-To build the project run:
+## 🧠 Aprendizajes
 
-```bash
-ng build
-```
+* Manejo de estado con signals
+* Arquitectura desacoplada en Angular
+* Validaciones avanzadas en formularios
+* Flujo real de ecommerce
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 👨‍💻 Autor
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+**Edwin Najera**
 
-```bash
-ng test
-```
+* GitHub: https://github.com/EdwinDevNajera
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## ⭐ Notas
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-=======
-# Eccomerce
-Template Eccomerce
->>>>>>> dbae98f67cb3f55004ca28be02e20f3a0b9886e3
+Este proyecto fue desarrollado como práctica avanzada para portafolio, simulando un flujo real de ecommerce listo para escalar a producción.
