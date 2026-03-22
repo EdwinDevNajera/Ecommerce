@@ -1,0 +1,38 @@
+<div class="login-container">
+
+  <div class="login-card">
+
+    <h2>Iniciar sesión</h2>
+
+    <form [formGroup]="loginForm">
+
+      <div class="field">
+        <input
+          pInputText
+          formControlName="email"
+          placeholder="Correo electrónico"
+        />
+      </div>
+
+      <div class="field">
+        <input
+          pInputText
+          type="password"
+          formControlName="password"
+          placeholder="Contraseña"
+        />
+      </div>
+
+      <button (click)="login()" class="login-btn">
+        Ingresar
+      </button>
+
+    </form>
+
+    <p class="register">
+      ¿No tienes cuenta? <span>Crear cuenta</span>
+    </p>
+
+  </div>
+
+</div>

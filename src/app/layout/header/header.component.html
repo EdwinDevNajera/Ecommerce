@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="logo" routerLink="/">🛒 MiTienda</div>
+
+  <div class="search">
+    <input type="text" pInputText placeholder="Buscar productos..." />
+    <button pButton icon="pi pi-search"></button>
+  </div>
+
+  <div class="actions">
+    <label class="switch">
+      <input type="checkbox" (change)="toggleTheme()" />
+      <span class="slider"></span>
+    </label>
+
+    <button pButton label="Login" icon="pi pi-user" routerLink="/login"></button>
+
+    <button
+      pButton
+      icon="pi pi-shopping-cart"
+      pBadge
+      [value]="cartService.count()"
+      severity="danger"
+      (click)="op.toggle($event)"
+    ></button>
+
+    <p-overlayPanel #op [style]="{ width: '300px' }">
+      <app-cart-overlay [cartItems]="cartService.items()"></app-cart-overlay>
+    </p-overlayPanel>
+  </div>
+</header>

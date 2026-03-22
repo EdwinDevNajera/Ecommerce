@@ -1,0 +1,65 @@
+<form [formGroup]="paymentForm" class="payment-card">
+  <h3>Método de pago</h3>
+
+  <div class="payment-grid">
+    <div class="field full">
+      <div class="input-icon">
+        <input
+          pInputText
+          formControlName="cardNumber"
+          (input)="onlyNumbers('cardNumber', $event)"
+          placeholder="Número de tarjeta"
+          maxlength="16"
+        />
+
+        <div class="card-icons">
+          <img src="images/icon/Visa.png" alt="visa" />
+          <img src="images/icon/Mastercard.png" alt="mc" />
+        </div>
+      </div>
+
+      <small *ngIf="isInvalid('cardNumber')">
+        Número inválido (16 dígitos)
+      </small>
+
+      <small *ngIf="paymentForm.get('cardNumber')?.errors?.['invalidCard']">
+        Tarjeta inválida
+      </small>
+    </div>
+
+    <div class="field full">
+      <input
+        pInputText
+        formControlName="cardName"
+        placeholder="Nombre del titular"
+      />
+      <small *ngIf="isInvalid('cardName')">Requerido</small>
+    </div>
+
+    <div class="field">
+      <input
+        pInputText
+        formControlName="expiry"
+        placeholder="MM/YY"
+        maxlength="5"
+        (input)="formatExpiry($event)"
+      />
+      <small *ngIf="isInvalid('expiry')">Formato inválido</small>
+    </div>
+
+    <div class="field">
+      <div class="input-icon">
+        <input
+          pInputText
+          formControlName="cvv"
+          (input)="onlyNumbers('cardNumber', $event)"
+          placeholder="CVV"
+          maxlength="3"
+        />
+        <span class="cvv-icon">💳</span>
+      </div>
+
+      <small *ngIf="isInvalid('cvv')">CVV inválido</small>
+    </div>
+  </div>
+</form>

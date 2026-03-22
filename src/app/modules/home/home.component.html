@@ -1,0 +1,53 @@
+<div class="categories-bar">
+  <span class="active">All Product</span>
+  <span>Living room</span>
+  <span>Office</span>
+  <span>Decor</span>
+  <span>Kitchen</span>
+  <span>Bath</span>
+</div>
+
+<section class="products-section">
+  <p class="subtitle">Products</p>
+  <h2>Our Products</h2>
+  <p class="description">Have a good setup for your minimalist home</p>
+
+  <div class="products-grid">
+    <div class="product-card" *ngFor="let p of products">
+      <img [src]="p.image" alt="{{ p.name }}" />
+      <p class="desc">{{ p.description }}</p>
+    </div>
+  </div>
+
+  <h2 class="class-h2">ELECTRONICA</h2>
+
+  <div class="carousel-container">
+    <button class="arrow left" (click)="scrollLeft()">‹</button>
+
+    <div class="carousel" #carousel>
+      <div class="card" *ngFor="let r of electronic">
+        <img [src]="r.image" alt="" (click)="addToCart(r)" class="clickable" />
+        <p class="name">{{ r.name }}</p>
+        <p class="price">${{ r.price }}</p>
+      </div>
+    </div>
+
+    <button class="arrow right" (click)="scrollRight()">›</button>
+  </div>
+
+  <div class="carousel-wrapper">
+    <div class="carousel-header">
+      <button (click)="prev()" class="nav-btn">‹</button>
+      <h2>Watch</h2>
+      <button (click)="next()" class="nav-btn">›</button>
+    </div>
+
+    <div class="carouselv2">
+      <div class="card" *ngFor="let r of visibleWatch">
+        <img [src]="r.image" (click)="addToCart(r)" class="clickable" />
+        <p class="name">{{ r.name }}</p>
+        <p class="price">${{ r.price }}</p>
+      </div>
+    </div>
+  </div>
+</section>

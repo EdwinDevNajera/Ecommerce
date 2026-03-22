@@ -1,0 +1,54 @@
+/* CARD CONTENEDOR */
+.payment-method-card {
+  background: var(--card-bg);
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+/* TÍTULO */
+.payment-method-card h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+/* OPCIONES */
+.method {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* HOVER */
+.method:hover {
+  /* border-color: var(--border-color); */
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* RADIO */
+.method input {
+  cursor: pointer;
+}
+
+/* TEXTO */
+.method .text {
+  color: var(--text-color);
+}
+
+/* 🔥 OPCIÓN SELECCIONADA */
+.method:has(input:checked) {
+  border: 2px solid var(--primary);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* DARK MODE */
+[data-theme="dark"] .method:has(input:checked) {
+  background: rgba(255, 255, 255, 0.05);
+}

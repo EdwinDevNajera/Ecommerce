@@ -1,0 +1,90 @@
+<!-- 
+
+<div class="checkout-container">
+
+  <div class="checkout-left">
+
+    <app-shipping-form></app-shipping-form>
+
+    <app-payment-card></app-payment-card>
+
+  </div>
+
+  <div class="checkout-right">
+
+    <div class="summary-card">
+      <h3>Resumen</h3>
+
+      <div *ngFor="let item of cartService.items()" class="summary-item">
+        <span>{{item.name}} x{{item.qty}}</span>
+        <span>${{item.price * item.qty}}</span>
+      </div>
+
+      <div class="total">
+        <strong>Total:</strong>
+        <strong>${{cartService.total()}}</strong>
+      </div>
+
+      <button class="pay-btn">
+        Finalizar compra
+      </button>
+
+    </div>
+
+  </div>
+
+</div> -->
+
+
+<div class="checkout-container">
+
+  <!-- IZQUIERDA (FORMULARIO) -->
+  <div class="checkout-left">
+
+    <app-shipping-form></app-shipping-form>
+
+    <!-- <app-payment-card></app-payment-card> -->
+
+    <app-payment-method-selector 
+    (methodChange)="onMethodChange($event)">
+    </app-payment-method-selector>
+
+    <!-- SOLO SI ES TARJETA -->
+    <app-payment-card *ngIf="paymentMethod === 'card'"></app-payment-card>
+
+    <!-- SI ES SPIN -->
+    <div *ngIf="paymentMethod === 'spin'" class="spin-info">
+    Serás redirigido a Spin by OXXO para completar el pago.
+    </div>
+
+    <button class="pay-btn" (click)="handleCheckout()">
+    Pagar ahora
+    </button>
+
+  </div>
+
+  <!-- DERECHA (RESUMEN) -->
+  <!-- <div class="checkout-right">
+
+    <div class="summary-card">
+
+      <h3>Resumen</h3>
+
+      <div *ngFor="let item of cartService.items()" class="summary-item">
+        <span>{{ item.name }} x{{ item.qty }}</span>
+        <span>${{ item.price * item.qty }}</span>
+      </div>
+
+      <div class="total">
+        <strong>Total</strong>
+        <strong>${{ cartService.total() }}</strong>
+      </div>
+
+    </div>
+
+  </div> -->
+
+
+  <app-order-summary></app-order-summary>
+
+</div>

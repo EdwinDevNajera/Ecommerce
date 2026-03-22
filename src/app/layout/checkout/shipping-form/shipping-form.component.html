@@ -1,0 +1,49 @@
+<form [formGroup]="form" class="shipping-card">
+  <h3>Entrega</h3>
+
+  <div class="form-grid">
+    <div class="field full">
+      <input
+        pInputText
+        formControlName="fullName"
+        placeholder="Nombre completo"
+      />
+      <small *ngIf="isInvalid('fullName')">Requerido</small>
+    </div>
+
+    <div class="field full">
+      <input pInputText formControlName="address" placeholder="Código postal" />
+      <small *ngIf="isInvalid('address')">Requerido</small>
+    </div>
+
+    <div class="field">
+      <input
+        pInputText
+        formControlName="zip"
+        (input)="onlyNumbers($event)"
+        placeholder="Código postal"
+      />
+      <small *ngIf="isInvalid('zip')">
+        Código postal inválido (5 dígitos)
+      </small>
+    </div>
+
+    <div class="field">
+      <input
+        pInputText
+        formControlName="phone"
+        (input)="onlyNumbers($event)"
+        placeholder="Teléfono"
+      />
+      <small *ngIf="isInvalid('phone')"> Teléfono inválido (10 dígitos) </small>
+    </div>
+
+    <div class="field">
+      <input pInputText formControlName="city" placeholder="Ciudad" />
+    </div>
+
+    <div class="field">
+      <input pInputText formControlName="state" placeholder="Estado" />
+    </div>
+  </div>
+</form>

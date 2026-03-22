@@ -1,0 +1,62 @@
+<div class="cart-container">
+  <h2>Carrito de compra</h2>
+
+  <div class="cart-table">
+    <!-- HEADER -->
+    <div class="cart-header">
+      <span>Producto</span>
+      <span>Precio</span>
+      <span>Cantidad</span>
+      <span>Total</span>
+      <span></span>
+    </div>
+
+    <span *ngIf="cartService.count() === 0"> Tu carrito está vacío </span>
+
+    <!-- ITEMS -->
+    <div class="cart-item" *ngFor="let item of cartService.items()">
+      <div class="product">
+        <img [src]="item.image" />
+        <p>{{ item.name }}</p>
+      </div>
+
+      <div class="price">
+        <span class="old-price">{{ item.oldPrice }}</span>
+        <span>${{ item.price }}</span>
+      </div>
+
+      <div class="quantity">
+        <button (click)="cartService.decrease(item)">−</button>
+        <span>{{ item.qty }}</span>
+        <button (click)="cartService.increase(item)">+</button>
+      </div>
+
+      <div class="total">${{ item.price * item.qty }}</div>
+
+      <!-- <button class="remove-btn" (click)="cartService.removeFromCart(item)" > X
+      </button> -->
+
+      <button
+        pButton
+        icon="pi pi-trash"
+        severity="danger"
+        (click)="cartService.removeFromCart(item)"
+      ></button>
+    </div>
+  </div>
+
+  <div class="cart-footer">
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <div class="summary-group">
+      <span>Subtotal: ${{ cartService.total() }}</span>
+      <button class="checkout-btn" routerLink="/checkout">
+        Finalizar compra
+      </button>
+    </div>
+
+    <div></div>
+  </div>
+</div>

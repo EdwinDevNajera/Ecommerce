@@ -1,0 +1,28 @@
+<div class="cart-panel">
+  <h3>Carrito</h3>
+
+  <app-cart-item-list [items]="cartItems" [editable]="false">
+  </app-cart-item-list>
+
+  <hr />
+
+  <div class="cart-total">
+    <strong>Total:</strong>
+    <span>${{ cartService.total() }}</span>
+  </div>
+
+  <button
+    pButton
+    label="Ver carrito"
+    class="w-full"
+    (click)="goToCart()"
+  ></button>
+
+  <button
+    pButton
+    label="Checkout"
+    severity="success"
+    class="w-full"
+    routerLink="/checkout"
+  ></button>
+</div>

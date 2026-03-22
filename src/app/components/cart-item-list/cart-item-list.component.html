@@ -1,0 +1,33 @@
+<div *ngIf="items.length === 0">
+  <p>Tu carrito está vacío</p>
+</div>
+
+<div *ngFor="let item of items" class="cart-item">
+  <div>
+    <strong>{{ item.name }}</strong>
+
+    <div *ngIf="editable; else viewMode">
+      <p-inputNumber
+        [(ngModel)]="item.qty"
+        [min]="1"
+        (onInput)="updateQty(item, item.qty)"
+      >
+      </p-inputNumber>
+    </div>
+
+    <ng-template #viewMode>
+      <p>Cantidad: {{ item.qty }}</p>
+    </ng-template>
+  </div>
+
+  <div class="actions">
+    <span>${{ item.price * item.qty }}</span>
+
+    <button
+      pButton
+      icon="pi pi-trash"
+      severity="danger"
+      (click)="cartService.removeFromCart(item)"
+    ></button>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="payment-method-card">
+
+  <h3>Seleccionar método de pago</h3>
+
+  <label class="method" [class.active]="selected === 'card'">
+    <input 
+      type="radio" 
+      name="payment"
+      [checked]="selected === 'card'"
+      (change)="select('card')"
+    />
+    <span class="custom-radio"></span>
+    <p>Tarjeta (débito/crédito)</p>
+  </label>
+
+  <label class="method" [class.active]="selected === 'spin'">
+    <input 
+      type="radio" 
+      name="payment"
+      [checked]="selected === 'spin'"
+      (change)="select('spin')"
+    />
+    <span class="custom-radio"></span>
+    <p>Spin by OXXO</p>
+  </label>
+
+</div>
