@@ -111,10 +111,10 @@ src/app
 
 ## 🔮 Mejoras futuras
 
-* 💳 Integración con Stripe / MercadoPago
+* 💳 Integración con Paypal / MercadoPago / Stripe
 * 🔐 Autenticación real (JWT)
 * 🧾 Generación de órdenes
-* 📦 Backend (Node.js / NestJS)
+* 📦 Backend (.NET Core)
 * 🎟 Sistema de cupones
 
 ---
